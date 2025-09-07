@@ -1,0 +1,25 @@
+{
+	"name": "own_site_backend",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"server": "npx nodemon src/server.ts",
+		"prisma:format": "npx prisma format",
+		"prisma:migrate": "npx prisma migrate dev"
+	},
+	"prisma": {
+		"schema": "./prisma"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@types/express": "^5.0.3",
+		"express": "^5.1.0",
+		"nodemon": "^3.1.10",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.9.2"
+	}
+}
