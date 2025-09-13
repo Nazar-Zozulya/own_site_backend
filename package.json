@@ -1,31 +1,26 @@
 {
-	"name": "own_site_backend",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"server": "npx nodemon src/server.ts",
-		"prisma:format": "npx prisma format",
-		"prisma:migrate": "npx prisma migrate dev"
-	},
-	"prisma": {
-		"schema": "./prisma"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"@types/axios": "^0.9.36",
-		"@types/express": "^5.0.3",
-		"axios": "^1.12.1",
-		"cors": "^2.8.5",
-		"express": "^5.1.0",
-		"nodemon": "^3.1.10",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.9.2"
-	},
-	"devDependencies": {
-		"@types/cors": "^2.8.19"
-	}
+    "name": "own_site_backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/server.js",  
+        "server": "npx nodemon src/server.ts", 
+        "prisma:format": "npx prisma format",
+        "prisma:migrate": "npx prisma migrate dev"
+    },
+    "dependencies": {
+        "axios": "^1.12.1",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.2",
+        "express": "^5.1.0",
+        "nodemon": "^3.1.10",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.2",
+        "@types/axios": "^0.9.36",
+        "@types/express": "^5.0.3"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.19"
+    }
 }
