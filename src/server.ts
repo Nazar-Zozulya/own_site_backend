@@ -19,11 +19,25 @@ interface contactMeData {
 	message: string
 }
 
+const BOT_TOKEN = process.env.BOT_TOKEN
+const CHAT_ID = process.env.CHAT_ID
 
-app.post("/contact-me/", (req, res) => {
+app.post("/contact-me/", async (req, res) => {
 	const body = req.body
-	console.log(body)
-	res.json(body)
+
+	const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`
+	const response = await fetch(url, {
+		method: "POST",
+		headers: { "Content-Type": "application/json" },
+		body: JSON.stringify({
+			chat_id: CHAT_ID,
+			text: `name: ${body.name} \nemail: ${body.email} \nmessage: ${body.message}`,
+		}),
+	})
+
+	const result = response.json()
+
+	res.json(result)
 })
 
 app.listen(PORT, HOST, () => {
